@@ -1,2 +1,3 @@
 # EstraFitEXA
 interface for EXAFS program Estra and FitEXA
+ESTRA and FitEXA are two programs for processing X-ray absorption spectroscopy data, extraction of extended X-ray absorption fine structure (EXAFS) signal, and EXAFS data analysis via least square refinement procedure (shell fitting). ESTRA and FitEXA propose useful options such as the analysis of the noise on the raw χ(k) data and a high flexibility in the choice of the model distribution function: harmonic, anharmonic (cumulants) and hard sphere models. The minimization routines underneath the FitEXA code allow ample choice/control of the non-linear minimization procedure and check of the correlation among the parameters.

@@ -1,0 +1,33 @@
+Aucluster7_20K          # SAMPLE 
+e                   # option 
+Au7a_20K.abs                                                     
+  1  2              # columns for Energy and Alpha ?
+11750.0 11850.0     # limits (eV) for PRE EDGE (linear)fit
+11950.0     0.8     # Max. energy and tolerance for edge search
+0                   # number of excluded regions
+  6                 # Number of spline intervals
+     2.650
+     6.000
+     8.700
+    12.300
+    15.700
+    17.800 
+    21.000
+ 3 3 3 4 4 4  
+ 0                  # number of excluded regions ede ade wde
+ 3.0  6.0
+J  E  0                 # constraints at the edge (J,D,E,[n])
+0.135
+f                   # option
+ 2.6   15.0          # K_min, K_max for the FT
+ 3                  # K-Weight for FT
+g                   # window: Gauss, Hanning, [N]one
+ 1.0                # Gaussian width
+  8.0  0.01         # R max and DR for FT
+b                   # option
+2.0 6.0             # BF limits
+2.8606              # expected <R> for the BF
+p
+q                   # option
+
+ 

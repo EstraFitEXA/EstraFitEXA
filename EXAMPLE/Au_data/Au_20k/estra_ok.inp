@@ -1,0 +1,45 @@
+Au_foil20K          # SAMPLE 
+e                   # option 
+Au_20K.abs                                                     
+1  2                # columns for Energy and Alpha ?
+11780.0 11860.0     # limits (eV) for PRE EDGE (linear)fit
+11950.0     0.8     # Max. energy and tolerance for edge search
+0                   # number of excluded regions
+5                   # Number of spline intervals
+     2.650
+     5.700
+     7.800
+    12.000
+    15.700 
+    21.300
+ 3 3 3 3 4  
+ 0                  # number of excluded regions ede ade wde
+ 3.0  6.0
+J E 0                  # constraints at the edge (J,D,E,[n])
+0.90
+f                   # option
+ 2.5   19.0           # K_min, K_max for the FT
+ 2                  # K-Weight for FT
+g                   # window: Gauss, Hanning, [N]one
+ 2.0                # Gaussian width
+  8.0  0.01         # R max and DR for FT
+b                   # option
+1.53 3.5             # BF limits
+2.870               # expected <R> for the BF
+p
+q                   # option
+
+ 2.900
+     4.800
+     6.900
+    10.800 
+    15.000
+    23.000
+ 3 3 3 4 4
+2.900
+     4.900
+     7.900
+    11.800 
+    15.500
+    22.000
+  

@@ -1,0 +1,55 @@
+***param-N|*param***|****value|****error|******min|******max  
+         1    a_2        4.061      .000      
+        10    a_1        2.87       .002     2.80      2.92 
+        11    s1       3.62e-3     1.e-4     1.e-4     5.e-2    
+        12    s2       5.23e-3     0.e-4     1.e-4     5.e-2            
+        13    s3       6.64e-3     0.e-4     1.e-4     5.e-2            
+        14    s4a      7.95e-3     0.e-4     1.e-4     5.e-2        
+        15    s4b      7.74e-3     0.e-4     1.e-4     5.e-2        
+        16    s4c      7.03e-3     0.e-4     1.e-4     5.e-2     
+        17    s7       7.10e-3     0.e-4     1.e-4     5.e-2                                
+        41    n1         1.000      .000      0.00      5.00  
+        2     de         8.216        .1      2.00     15.00  
+        3     gamma      0.000      .000      0        5.00
+        4     c1          .000     0.e-6    -5.e-4     5.e-4
+        5     c2          0.00     0.e-6    -1.e-4     1.e-4
+        8     c1          .000     0.e-6     0.e-4     5.e-4
+        9     c2          0.00     0.e-6    -1.e-4     1.e-4
+        6     so2         0.90      .000      0.00      0.00  
+                                                              
+'Au_RT.exa'                                                   
+AuRT       #4-char estension                         (ch4)    
+1,2        # colonne k, k*chi(k)                   (2 int)    
+3.4, 22.   # range:  xmin xmax (xmin<=0 full range)(2 real)   
+2.         # data weight k^w                       (1 real)   
+6,0        # Number so2, Number eta if 0: eta=3.   (2 int)    
+                                                              
+1          # number of shells                      (1 int)    
+N filt.    k1   k2    wt  typ(1H-2G) sig   Rup  dr   RL  RR      
+           2.5  20.    2.    2        1.    8. 0.01 1.5 3.5  
+                          
+G     sign.1     # Shell type                    -|-     (ch1)      
+41,12.       # or: &string&   # coord.num.     |     (int real)  
+10           # or: &string&   # Distance       |     (int)       
+11           # or: &string&   # s^2            |     (int)       
+2,3          # n_de,n_gamma                   |     (2 int)    
+feff         # A/F file  11: feff****.dat)    | (ch4) exp1  1,4,6
+"..\fasi_teoriche\AuAu_2b_2.89.dat"
+                                       
+7.     Stima noise                    (ch2)       
+
+
+set errdef 1.e-7
+simplex
+migrad
+set errdef 1.5e-4
+hesse 
+minos
+contour 10,2,3
+exit
+
+
+
+
+
+                                                              

@@ -1,0 +1,319 @@
+  ************************************* 
+  **    Extraction of EXAFS data     ** 
+  **    version 2009                 ** 
+  **                    -.-2009      ** 
+  **                                 ** 
+  **                                 ** 
+  ** C. Meneghini meneghini@esrf.fr  ** 
+  **                                 ** 
+  **  F. Bardelli  bardelli@esrf.fr  ** 
+  **                                 ** 
+  ************************************* 
+  ** parameter size:                 ** 
+  ** # points 4096                  ** 
+  **                                 ** 
+  **                                 ** 
+  ************************************* 
+  
+ # Sample? (a10)
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+ *** EXTRACTING EXAFS *******
+******** extraction of EXAFS data *********
+*   version 2009 - Beta           *********
+* Does not WORK WITH OLD INPUT FILES! *****
+*             version 2009            *****
+*******************************************
+*******************************************
+ 
+ INPUT: ascii file  Energy-alpha(E) 
+ OUTPUT: ascii files 
+ Sample: Au_foil20K                              
+ Input file?
+ columns for E (eV/keV) and alpha?
+ Reading experimental file :Au_20K.abs                                                            
+ firs lines beginning with # are comments
+# Mu file produced by Estra_GUI                                               
+# using columns 1 , 2 for Mu                                                  
+# for files:                                                                  
+# D:/cprestip/Documents/project/meghini/new executable/EXAMPLE/Au_data/Au_20k/
+# E Mu                                                                        
+11709.9799800000  1.1593290000                                                
+ skip first   5 lines 
+ read   629 data points
+ output file: Au_20K.exa                                                            
+ info on extraction: Au_20K.pre                                                            
+Data between   0.1171E+05 and   0.1370E+05
+************************************
+***                              ***
+**  Subtraction linear pre-edge   **
+***                              ***
+************************************
+ limits (eV) for PRE EDGE (linear)fit ?
+Pre edge limits:11780.4831 11852.1979
+Linear fit:  -.383386E-03 * E +  5.64372    
+Max. energy and tolerance for edge search?
+ if E2 < 0: edge energy fixed at -E2
+wl:        0.970370 ewl:    11946.764445
+Edge (eV):    11919.933389 slope:        0.100715
+ K_max of data:   21.5935
+ Number of glitches 0:none
+N. Glitch =  0
+ Number of spline intervals ? max:   10
+knots?   5+1 ( < 60 means in K-space)
+   11946.6904016263        12043.7262455030        12151.7449428194     
+   12468.5997882808        12859.1054774503        13648.5754627750     
+degrees ?
+#### Secondary edges
+ Number of secondary edges?  0:none
+   0    Number of secondary edges: 
+ E_de(E or K) A_de(amp/wl) W_de (wdt, eV)
+Note: Amplitude will be normalized by white line:   0.97037    
+     if E_de < Eo position in K
+ Edge   Energy        ampl.       width      ampl*wl
+   
+ Limits for jump evaluation (eV/k) 
+####### Limits for jump evaluation (E-Eo) 
+    34.29   137.17
+####### norm_flg=   1
+    Normalize by spline(E)
+   
+### constraints at the edge (n/J  E/k  wgt)? 
+ n/J: none or fixed jump
+ E/k: energy or K weight
+ wgt: x^(wgt) weith of splines 0.0=cost
+n/J =  J
+E/K =  E
+weigth =  X^      0.00
+ discontinuity at Eo?
+number of coefficients:   12
+number of free params/interval:
+   3.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        3.00000000000000     
+ degrees:
+           3           3           3           3           4
+ jump fixed at the edge:    0.90000
+  1      2.6500      5.7000
+  2      5.7000      7.8000
+  3      7.8000     12.0000
+  4     12.0000     15.7000
+  5     15.7000     21.3000
+number of coefficients:   12
+#### Polynomial spline ####
+#### A  Matrix ####
+0.405E+09 0.497E+12 0.661E+15 0.403E+12 0.494E+15 0.330E+12 0.376E+15
+0.497E+12 0.661E+15 0.923E+18 0.544E+15 0.699E+18 0.452E+15 0.538E+18
+0.661E+15 0.923E+18 0.133E+22 0.767E+18 0.102E+22 0.643E+18 0.792E+21
+0.403E+12 0.544E+15 0.767E+18 0.449E+15 0.583E+18 0.374E+15 0.450E+18
+0.494E+15 0.699E+18 0.102E+22 0.583E+18 0.782E+21 0.490E+18 0.609E+21
+0.330E+12 0.452E+15 0.643E+18 0.374E+15 0.490E+18 0.313E+15 0.379E+18
+0.376E+15 0.538E+18 0.792E+21 0.450E+18 0.609E+21 0.379E+18 0.474E+21
+ 
+#### Y Vector  ####
+-.397E+05
+-.486E+08
+-.642E+11
+-.394E+08
+-.479E+11
+-.322E+08
+-.363E+11
+#### Coefficients  ####
+0.525E-03
+-.878E-05
+0.334E-07
+-.179E-05
+-.446E-07
+0.168E-05
+0.114E-07
+###### exit from polspline
+###    spline coefficients   E and K
+# first intervall:  11946.7      12043.7      55.995 56.222 
+ coef   1    0.5246043701E-03
+ coef   2   -0.8780582998E-05
+ coef   3    0.3338616179E-07
+  2  intervall:  12043.7      12151.7      55.995  56.222 
+ coef   4   -0.1790944437E-05
+ coef   5   -0.4457224266E-07
+  3  intervall:  12151.7      12468.6      55.995  56.222 
+ coef   6    0.1675831000E-05
+ coef   7    0.1137950381E-07
+  4  intervall:  12468.6      12859.1      55.995  56.222 
+ coef   8   -0.3758119395E-07
+ coef   9   -0.1756905530E-09
+  5  intervall:  12859.1      13648.6      55.995  56.222 
+ coef  10   -0.1587153730E-07
+ coef  11    0.4164980475E-10
+ coef  12   -0.6485803707E-13
+#### fixed discontinuity at Eo:  0.90000000    
+calculating EXAFS between11919.933413648.5755
+##### Jump used for normalizzation: 
+ 0.90270    
+Averaged on    83 pts in between    34.2916  137.1666 eV
+         or    34.2916  137.1666 A^-1
+ EDGE=    11919.9333892134     
+ SLOPE (slope/jump)=  0.111571307749919     
+ JUMP=   0.902697030699616     
+ EWL=     11946.7644448730     
+ hwl=     1.07496781338508     
+first and last point for noise estimation [n,k(n)]:
+          28   2.66705509387802     
+         583   21.2899753096803     
+***** estimating data noise: linear interpolation *****
+ Intervals +/-    0 points
+ Intervals +/-   20 points
+ Average noise standard dev.  =    0.9732E-03
+ Average K*noise standard dev.=    0.1004E-01
+ Average signal to noise ratio=     18.84    
+ Average K*sgnl/K*nse ratio   =     16.94    
+exafs output file: 
+Au_20K.exa                                                            
+status: c . e . f . b 
+        0   1   0   0
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+ ********    FT of EXAFS data      *********
+    version 2009  
+ *******************************************
+   
+ sample: Au_foil20K                              
+  Using stored k, k.chi(k) data
+ output file: 
+ Au_20K.fou                                                            
+Data between   0.1990     and    21.29    
+ K_min, K_max for the FT?
+using K-range:   2.516        18.99    
+ K-Weight for FT (chi(k)*k^W) 
+ gaussian (g) or Hanning (h) window (n=none)?
+  half width of K-range (HWKR)=   8.23728014056962     
+  G_window= exp -0.5[(k-<k>)*sigma/HWKR]^2
+  Larger sigma larger attenuation
+   GW (sigma_g = GW/HWKR) ?
+  using sigma:   0.242798589567175     
+ R max and DR for FT (A)?
+  **** Calculating FT          801
+FT on: Au_20K.fou                                                            
+  1:R 2:|FT| 3:Re 4:Im -=*=- 5:k 6:K^Wchi(k) 7:Apo
+ 
+  ******  FT done **********
+FT output file: 
+Au_20K.fou                                                            
+status: c . e . f . b 
+        0   1   1   0
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+ ********    Fourier filtering     *********
+    version 2009 
+ *******************************************
+   
+ sample: Au_foil20K                              
+ back FT of: 
+ Au_20K.fou                                                            
+ n point:         801
+  801points in the R-range: 0.00000      8.00000    
+  488points in the K-range: 2.51569      18.9903    
+Gaussian window, Sig=    0.2428
+ FT weight:            2
+ output file: 
+ Au_20K.bf                                                             
+ Rmin e Rmax for BFT ?
+ expected R value for the considered shell?
+ BFT in the K range:  2.5157  18.9903
+ number of K points:          488
+ number of R points:          201
+  ********* BFT done *********
+BFT output file: 
+Au_20K.bf                                                             
+status: c . e . f . b 
+        0   1   1   1
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+*********END**************
+points between:     0.000000     0.000000

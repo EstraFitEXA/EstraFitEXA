@@ -2477,11 +2477,11 @@ class FitEXAGui:
         if err: 
             tkMessageBox.showinfo("FitEXAFS ERROR",err)
             return
-        for item in out: 
-            if ('ERROR' in item) or ('error' in item):
-                tkMessageBox.showinfo("FitEXAFS ERROR",item)
-                return
-                       
+        if ('ERROR' in out) or ('error' in out):
+            Estart=out.find('ERROR')or out.find('error')   
+            tkMessageBox.showinfo("FitEXAFS ERROR",out[Estart:])
+            return
+            
         fitexa_output=output_fitexa(os.path.splitext(fitexa_input.label)[0])
         fitexa_output.read_output()
         

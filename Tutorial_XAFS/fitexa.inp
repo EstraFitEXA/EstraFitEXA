@@ -1,0 +1,130 @@
+***param-N|*param***|****value|****error|******min|******max  
+     1'    n1    '  0.10000E+01  0.00000E+00
+     2'    n1    '  0.50000E+00  0.05000E+00  0.1          1.9
+     5'    de    ' -0.16000E+01  0.02000E+00 -0.10000E+02  0.10000E+02
+     6'    gamma '  0.00000E+00  0.00000E+00
+     7'    so2   '  0.86000E+00  0.00000E+00  0.00000E+00  0.57500E+01
+    11'    r1    '  0.19658E+01  0.02         0.19000E+01  0.21500E+01
+    12'    r2    '  0.24778E+01  0.02         0.23500E+01  0.25500E+01
+    13'    r3    '  0.35670E+01  0.02         0.33500E+01  0.36500E+01
+    14'    r4    '  0.39614E+01  0.05         0.39500E+01  0.41200E+01
+    17'    r5    '  0.44000E+01  0.05         0.44000E+01  0.46000E+01
+    18'    r6    '  0.45513E+01  0.05         0.45500E+01  0.59200E+02
+    19'    r7    '  0.57082E+01  0.05         0.55500E+01  0.60200E+01
+    20'    delta '  0.00200E+01  0.002        0.000000000  0.02      
+    21'     s1   '  0.94582E-02  0.001        0.00000E+00  0.10000E+00
+    22'     s2   '  0.11463E-01  0.001        0.00000E+00  0.10000E+00
+    23'     s3   '  1.27277E-02  0.001        0.00000E+00  0.10000E+00
+    24'     s4   '  0.97286E-02  0.001        0.29800E-02  0.10000E+00
+    25'     s4 3 '  0.97008E-02  0.001        0.00000E+00  0.10000E+00
+    26'     s4 4 '  0.26264E-01  0.000        0.00000E+00  0.10000E+00
+    27'     s7   '  0.24571E-01  0.001        0.00000E+00  0.10000E+00
+    28'     s8   '  0.20272E-01  0.001        0.00000E+00  0.10000E+00
+    29'     s9   '  0.15639E-01  0.001        0.00000E+00  0.10000E+00
+                                                              
+'BCFTO_103_XL_Fe_001_NoHeader.exa'                                                  
+F_CX       #4-char estension                         (ch4)      
+1,2        # colonne k, k*chi(k)                   (2 int)    
+3.1, 11.    # range:  xmin xmax (xmin<=0 full range)(2 real)   
+2.         # data weight k^w                       (1 real)   
+7,0       # Number so2, Number eta if 0: eta=3.   (2 int)    
+                                                              
+9          # number of shells                      (1 int)    
+N/Y FF k1 k2 wt  typ(1H-2G) sig  Rup  dr  RL  RR              
+       0. 0. 0.  0          1.    6.  0.  0.  0.              
+                                                              
+G   1      # Shell type                    -|-     (ch1)      
+1,6     # or: &string&   # coord.num.     |     (int real)  
+11         # or: &string&   # Distance       |     (int)       
+21        # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeO_2.01.dat'                                                 
+ 
+G   2      # Shell type                    -|-     (ch1)      
+2,1.     # or: &string&   # coord.num.     |     (int real)  
+12         # or: &string&   # Distance       |     (int)       
+22        # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeFe_2.44.dat'                                                 
+
+G   3      # Shell type                    -|-     (ch1)      
+1,6.      # or: &string&   # coord.num.     |     (int real)  
+13         # or: &string&   # Distance       |     (int)       
+23        # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeBa_3.48.dat'  
+
+
+G    4     # Shell type                    -|-     (ch1)      
+1,5.0     # or: &string&   # coord.num.     |     (int real)  
+14         # or: &string&   # Distance       |     (int)       
+24        # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeTi_4.02.dat'  
+
+G    5     # Shell type                    -|-     (ch1)      
+1,10     # or: &string&   # coord.num.     |     (int real)  
+&#14+#20&    # or: &string&   # Distance       |     (int)       
+&#25/2 + #24/2 &       # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeOTi_4.02_3b.dat'
+
+G    6     # Shell type                    -|-     (ch1)      
+1,5.      # or: &string&   # coord.num.     |     (int real)  
+&#14+2*#20&          # or: &string&   # Distance       |     (int)       
+25        # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeOTi_4.02_4b.dat'
+
+G    7     # Shell type                    -|-     (ch1)      
+1,24     # or: &string&   # coord.num.     |     (int real)  
+17         # or: &string&   # Distance       |     (int)       
+27        # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeO_4.49.dat'
+
+
+G    8     # Shell type                    -|-     (ch1)      
+1,4      # or: &string&   # coord.num.     |     (int real)  
+18         # or: &string&   # Distance       |     (int)       
+28        # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeOBa_4.70_3b.dat'
+
+G    9     # Shell type                    -|-     (ch1)      
+1,10      # or: &string&   # coord.num.     |     (int real)  
+19         # or: &string&   # Distance       |     (int)       
+29        # or: &string&   # s^2            |     (int)       
+5,6        # n_de,n_gamma                   |     (2 int)     
+feff       # A/F file  11: feff****.dat)    |     (ch4)       
+'../fasi/feff_FeTi_5.72.dat' 
+
+-8.   max R/sig^2 for error analysis             (real)       
+
+set errdef 1.e-6
+minimize
+exit
+
+fix 14,25,20
+fix 2
+minimize
+fix 5,23,4
+rel 14,25,20
+minimize
+save
+rel 2
+migrad
+exit
+
+set errdef 0.215E-05
+hesse
+contour 2,21
+exit

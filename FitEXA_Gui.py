@@ -111,10 +111,11 @@ class label_outread(object):
                 self.shells[-1]["gamma"]=letto(line[5])
                 self.shells[-1]["C2"]   =letto(line[6])
                 self.shells[-1]["C3"]   =letto(line[7]) 
-                self.shells[-1]["one_string"]=\
-                    "N={0:1.2f},  R= {1:1.2f},  s2={2:0.3f},  E={3:2.1f}".format(
-                    self.shells[-1]["N"],self.shells[-1]["R"],
-                    self.shells[-1]["sigma"],self.shells[-1]["DE"]) 
+                self.shells[-1]["one_string"]=' '.join([u'Fit results:',
+                    u'N={0:1.2f},'.format(self.shells[-1]["N"]),
+                    u'R= {0:1.2f}\u212B,'.format(self.shells[-1]["R"]),
+                    u's2={0:0.4f}\u212B\u00B2,'.format(self.shells[-1]["sigma"]),
+                    u'E={0:2.1f}eV'.format(self.shells[-1]["DE"])]) 
                 if self.shells[-1]["gamma"]!=0:
                     self.shells[-1]["one_string"]+= " gamma="+str(self.shells[-1]["gamma"])
                 if self.shells[-1]["C2"]!=0:
@@ -201,6 +202,9 @@ class variabile(object):
         if __verbose__:                            
                 print stringa
 
+        if "'" in stringa:
+           stringa=stringa.replace("'","") 
+            
         stringa= stringa.split()
         if len(stringa)==0:
             raise TypeError
@@ -219,6 +223,7 @@ class variabile(object):
         self.error=float(stringa[3])
         self.min=float(stringa[4])        
         self.max=float(stringa[5])
+        
     def make_string(self):
         self.stringa=repr(self.N).rjust(10)
         self.stringa+=" "+self.param.ljust(9)
@@ -295,7 +300,8 @@ class shell_path(object):
         return stringa 
     
     def check_integrity(self):
-        #print "self.Coor ", self.Coor
+        ###controlla che ci siano tutti i parametri
+        #
         if self.Coor=="":
             raise ValueError ("ValueError: missing coordination number")
         if   self.Distance=="":
@@ -392,7 +398,7 @@ class input_fitexa(object):
                 raise ValueError(5*"\n"+20*"#"+"\n"+
                                  "# %s not coorespond to any variable \n"%(name) +
                                  20*"#"+"\n") 
-        var= re.compile('[a-zA-Z_+-][a-zA-Z0-9_+-]+')  
+        var= re.compile('[a-zA-Z_][a-zA-Z0-9_]*')  
         lista_name=re.findall(var,expression)
         lista_num= map(find_number, lista_name)
         for i,j in zip(lista_name,lista_num):
@@ -622,9 +628,9 @@ class Column_Window:
                 print  "\n"*5+"ERROR-----"*10+"\n\nERROR  change comment character"
                 print  "or redefine columns and press reload\n\n"+"ERROR-----"*10+"\n"*5 
                 self.array=np.zeros((18,4))
-                #print inst
-                #print type(inst)     # the exception instance
-                #print inst.args      # arguments stored in .args
+                #prin inst
+                #prin type(inst)     # the exception instance
+                #prin inst.args      # arguments stored in .args
                 
                 
             for i,item in enumerate(self.column_names):
@@ -1084,8 +1090,6 @@ class feffpath:
             geom=[]
             while (True):
                 line=feffpath.readline()
-                #print line
-                #print line[4]
                 if line[4]=="k": break
                 geom.append(line.split()[5])
             self.geom= "<->".join(geom)            
@@ -1213,9 +1217,9 @@ class PATH():
         self.path.tipo=self._type.get()
         #--------small labda no more lambda----------
         def int_or_not(string):
-            string.replace("Reff", str(self.PA_path.reff))
-            string.replace("reff", str(self.PA_path.reff))
-            string.replace("REFF", str(self.PA_path.reff))   
+            string=string.replace("Reff", str(self.PA_path.reff))
+            string=string.replace("reff", str(self.PA_path.reff))
+            string=string.replace("REFF", str(self.PA_path.reff))
             string=fitexa_input.Name2N(string)
             try:
                 string=int(string.replace("#",""))
@@ -1683,10 +1687,29 @@ class MINUIT_LOG():
         parent = Frame(genitore)
         parent.pack(side=TOP, expand=Y, fill=BOTH )
         
-        self.logtext=text.ScrolledText(parent=parent, text='' ,hor=True, active=True)
+        self.logtext=text.ScrolledText(parent=parent, text='' ,hor=True, active=False)
         self.logtext.text.configure( width=18)
        #----------------------------- --------------------------------------------------
-      
+#######################################################################################################
+########################             FITEXA_OUT()       ################################################
+#######################################################################################################
+class FITEXA_OUT():
+    def __init__(self, genitore): 
+      #-----------------------------      Declare      --------------------------------------------------
+        global fitexa_input
+      #-----------------------------      Define       --------------------------------------------------  
+      #-----------------------------      Structure    --------------------------------------------------
+        Header=Frame(genitore)
+        Header.pack(side=TOP, fill=X)
+        Label(Header, text= "fitexa.aut", width=50).grid(row=0,column=0, sticky=(N,E),ipady=10,ipadx=5) #
+   
+            
+        parent = Frame(genitore)
+        parent.pack(side=TOP, expand=Y, fill=BOTH )
+        
+        self.logtext=text.ScrolledText(parent=parent, text='' ,hor=True, active=False)
+        self.logtext.text.configure( width=18)
+       #----------------------------- --------------------------------------------------      
     
 
 
@@ -1882,6 +1905,7 @@ class EstraGraph:
                     self.figsub.lines.remove(self.curves[key])
                     del self.curves[key]
                 else:pass
+            self.figsub.autoscale()                
             self.canvas.draw()           
 
 
@@ -1988,7 +2012,7 @@ class EstraGraph_kchi(EstraGraph):
                                      "gx", ms=2, label="residual") 
                 
         self.set_label()
-        self.fig.subplots_adjust(left=0.15,  bottom=0.14)        
+        self.fig.subplots_adjust(left=0.15,  bottom=0.14)   
         self.canvas.draw()
         
     def  set_label(self): 
@@ -2286,12 +2310,12 @@ class FitGRAPH():
                        
         Frame(self.genitore).pack(side=TOP, expand=True, fill=Y)
         
-        #s = Style()
-        #s.configure('Green.TButton')
-        #s.map("Green.TButton",
-        #    foreground=[('pressed', 'red'), ('active', 'green')],
-        #    background=[('pressed', '!disabled', 'black'), ('active', 'white')]
-        #    )     
+        s = Style()
+        s.configure('Green.TButton')
+        s.map("Green.TButton",
+            foreground=[('pressed', 'red'), ('active', 'green')],
+            background=[('pressed', '!disabled', 'black'), ('active', 'white')]
+            )     
         
 
         ## custom ttk styles
@@ -2313,7 +2337,10 @@ class FitGRAPH():
         
         
         
-        
+        self.EditButton= Button(self.genitore,#                       command = self.Preplot,
+                         text = u"Edit inp",
+                         width = 13)
+        self.EditButton.pack(side=TOP,anchor=S, ipady=15, pady=15)        
         self.FitButton= Button(self.genitore,#                       command = self.Preplot,
                        text = u"Fit",
                        style='Green.TButton',
@@ -2391,14 +2418,17 @@ class FitEXAGui:
         notebook.pack(side=LEFT, expand=1 ,fill=BOTH)
         page1 = Frame(notebook)
         page2 = Frame(notebook)
-        page3 = Frame(notebook)        
+        page3 = Frame(notebook)       
+        page4 = Frame(notebook) 
         notebook.add(page1, text=' Shell')
-        notebook.add(page2, text='Minuit Var. and Param')
-        notebook.add(page3, text='Minuit log')        
+        notebook.add(page2, text='Minuit Var.&Comm.')
+        notebook.add(page3, text='Minuit log')
+        notebook.add(page4, text='FitEXA out')    
         
         self.M_P=Minuit(page2)
         self.SHEL_FIT=SHELLS(page1)
         self.LOG=MINUIT_LOG(page3)
+        self.OUT=FITEXA_OUT(page4)        
         #---------------------part1--------------------------------------         
 
 
@@ -2411,6 +2441,7 @@ class FitEXAGui:
         #---------------------part2--------------------------------------
         
         self.GRAPH_Fit.FitButton.config(command=self.Return)
+        self.GRAPH_Fit.EditButton.config(command=self.Edit)
         #genitore.bind_all("<Return>", self.Return) 
         #genitore.bind_all("<space>", self.Return)   
 
@@ -2448,22 +2479,59 @@ class FitEXAGui:
 
 
 
+
+    def Edit(self):
+        global fitexa_output
+        global fitexa_input
+        
+        ###Check if fitexa.inp is defined
+        try: fitexa_input
+        except NameError:
+             tkMessageBox.showinfo("Error","fitexa.inp not defined")
+             return
+             
+        top=Toplevel(takefocus=True)
+        text.InpEditor(parent=top,filex=fitexa_input.filename).pack()
+        top.wait_window()
+        fitexa_input.read_inp(fitexa_input.filename)
+        try:
+           self.SHEL_FIT.set_info()
+        except Exception as inst:
+            if isinstance(inst,IOError): 
+                print inst.args[1], "(",inst.filename,")"
+                tkMessageBox.showinfo("File ERROR",
+                                  '{} ({})'.format(inst.args[1],inst.filename))
+            print "\nimpossible to set SHELL information\n"
+        try:    
+            self.M_P.set_info()
+        except:
+            print "\nimpossible to set MINUIT information\n"    
+        return
+
     def Return(self,event=None):
         global fitexa_output
-        global fitexa_input  
+        global fitexa_input
+        
+        ###Check if fitexa.inp is defined
+        try: fitexa_input
+        except NameError:
+             tkMessageBox.showinfo("Error","fitexa.inp not defined")
+             return
+            
         self.M_P.read_info()
         try:
             self.SHEL_FIT.read_info()
         except ValueError as x:
             print x
-            return        
+            return  
+            
         fitexa_input.write_inp()
-        
         print 5*"\n"
         print 10*"$"+"  NEW RUN "+10*"$"
         command=os.path.join(inivar.get("Fitexa", "Fitexa_Dir"),
                              "FitEXA.exe")
         #print command ,"attenzione comando disabilitato"
+
         import subprocess
         p = subprocess.Popen([command], stdout=subprocess.PIPE, 
                                            stderr=subprocess.PIPE,
@@ -2482,9 +2550,15 @@ class FitEXAGui:
             tkMessageBox.showinfo("FitEXAFS ERROR",out[Estart:])
             return
             
-        fitexa_output=output_fitexa(os.path.splitext(fitexa_input.label)[0])
-        fitexa_output.read_output()
+        #print     os.path.splitext(fitexa_input.label)[0]
         
+        fitexa_output=output_fitexa(os.path.splitext(fitexa_input.label)[0])
+        if os.path.getsize('{}.out'.format(fitexa_output.label))==0:
+           tkMessageBox.showinfo('FitEXAFS ERROR', 
+                                 'Empty {}.out file'.format(fitexa_output.label)) 
+           return
+           
+        fitexa_output.read_output()
         i=0
         for item in self.SHEL_FIT.Path_list:
             if item._type.get()=="skip":
@@ -2492,10 +2566,11 @@ class FitEXAGui:
             else:
                 item.Tree._header.set(fitexa_output.out.shells[i]["one_string"])
                 fitexa_output.out.shells[i]
-                i+=1
-                
-        self.LOG.logtext.settext(file="fitexa.log")
-        self.LOG.logtext.text.see(END)  
+                i+=1      
+        self.LOG.logtext.settext(filex="fitexa.log")
+        self.LOG.logtext.text.see(END) 
+        self.OUT.logtext.settext(filex='{}.out'.format(fitexa_output.label))
+        self.OUT.logtext.text.see(END)         
         if hasattr(self.GRAPH_Fit,"graph_k1chi"):
             self.GRAPH_Fit.graph_k1chi.check_command()
         if hasattr(self.GRAPH_Fit,"graph_k2chi"):

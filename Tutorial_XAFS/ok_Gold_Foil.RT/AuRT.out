@@ -1,0 +1,32 @@
+ fit of: Au_bulk_300k.exa                                                      
+ Number of shells:              6
+ Number of points:             483
+ Number of parameters (max):     9
+ K-range:                3.1177    -  18.972    
+                          INFO     
+ average std.dev on Chi(k)  =     0.51480E-03
+ wgt.std.dev  (k^wt Chi)    =     0.94944E-01
+ S/N ratio                  =      15.738    
+ S/N_w ratio                =      3.0581    
+ ###  Least square found: F  =    0.16836E-06
+      R^2_w (norm. res.)     =    0.67931E-01
+      R^2_o (no wgt R^2)     =    0.28566    
+      Chi^2                  =     34174.    
+      red._Chi^2             =     72.096    
+      AIC_m                  =     34192.    
+ ** if Filtered data: Nind=     3 chi^2_red =        162.9    
+Suggested errdef (65%)=    0.352E-07  0.447E-07
+  ================= 
+ General parameters: 
+ So^2=  0.9200
+                     
+ structural parameters:
+ Sh.   N     R         sigma^2    DE    gam      b1         b2          Type   A-F file
+             A          A^2       eV           A^3(C)      A^4    
+________________
+ 1G  12.000  2.8516  0.830E-02 -0.819  0.000   0.00       0.00     Feff: ./fasi/AuAu_2.88.dat                                                            
+ 2G   6.000  4.0616  0.116E-01 -0.819  0.000   0.00       0.00     Feff: ./fasi/AuAu_4.07.dat                                                            
+ 3G  24.000  4.9755  0.133E-01 -0.819  0.000   0.00       0.00     Feff: ./fasi/AuAu_4.98.dat                                                            
+ 4G  12.000  5.7440  0.100     -0.819  0.000   0.00       0.00     Feff: ./fasi/AuAu_5.75.2b.dat                                                         
+ 5G  24.000  5.7440  0.183E-01 -0.819  0.000   0.00       0.00     Feff: ./fasi/AuAu_5.75.3b.dat                                                         
+ 6G  12.000  5.7440  0.157E-01 -0.819  0.000   0.00       0.00     Feff: ./fasi/AuAu_5.75.4b.dat                                                         

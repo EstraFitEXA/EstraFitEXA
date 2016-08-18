@@ -1,0 +1,81 @@
+***param-N|*param***|****value|****error|******min|******max  
+     1'    No    '  1.00E+0  0.00E+00
+     5'    de    '   5.0     0.02E+00 -20.0      20.00   
+     6'    gamma '  0.00E+00  0.00E+00
+     7'    so2   '  0.92E+00  0.0E+00  0.00E+00  0.57E+01
+    10'    a     '  4.07      0.02      4.00      4.10    
+    11'    a     '  4.07      0.02      4.00      4.10    
+    21'     s1   '  0.75E-02  0.001     0.00E+00  0.10E+00
+    22'     s1   '  0.01      0.001     0.00E+00  0.10E+00
+    23'     s1   '  0.015     0.001     0.00E+00  0.10E+00
+    24'     s1   '  0.015     0.001     0.00E+00  0.10E+00
+    25'     s1   '  0.015     0.001     0.00E+00  0.10E+00
+    26'     s1   '  0.015     0.001     0.00E+00  0.10E+00
+                                                              
+'Au_bulk_300k.exa'                                                  
+AuRT       #4-char estension                         (ch4)      
+1,2        # colonne k, k*chi(k)                   (2 int)    
+3.1, 19.   # range:  xmin xmax (xmin<=0 full range)(2 real)   
+2.         # data weight k^w                       (1 real)   
+7,0        # Number so2, Number eta if 0: eta=3.   (2 int)    
+                                                              
+6          # number of shells                      (1 int)    
+N/Y FF k1 k2 wt  typ(1H-2G) sig  Rup  dr  RL  RR              
+       0. 0. 0.  2          0.5    8.  0.  0.  0.              
+                                                              
+G       1      #  Shell type                    -|-     (ch1)      
+1,12           # or: &string&   # coord.num.     |     (int real)  
+&#11/1.4142&   # or: &string&   # Distance       |     (int)       
+21             # or: &string&   # s^2            |     (int)       
+5,6            # n_de,n_gamma                   |     (2 int)     
+feff           # A/F file  11: feff****.dat)    |     (ch4)       
+'./fasi/AuAu_2.88.dat'                                                  
+
+G       2      #  Shell type                    -|-     (ch1)      
+1,6            # or: &string&   # coord.num.     |     (int real)  
+&#10&   # or: &string&   # Distance       |     (int)       
+22             # or: &string&   # s^2            |     (int)       
+5,6            # n_de,n_gamma                   |     (2 int)     
+feff           # A/F file  11: feff****.dat)    |     (ch4)       
+'./fasi/AuAu_4.07.dat'  
+
+G       3      #  Shell type                    -|-     (ch1)      
+1,24            # or: &string&   # coord.num.     |     (int real)  
+&#10*1.225&   # or: &string&   # Distance       |     (int)       
+23             # or: &string&   # s^2            |     (int)       
+5,6            # n_de,n_gamma                   |     (2 int)     
+feff           # A/F file  11: feff****.dat)    |     (ch4)       
+'./fasi/AuAu_4.98.dat'  
+
+G       4a      #  Shell type                    -|-     (ch1)      
+1,12            # or: &string&   # coord.num.     |     (int real)  
+&#10*1.4142&   # or: &string&   # Distance       |     (int)       
+24             # or: &string&   # s^2            |     (int)       
+5,6            # n_de,n_gamma                   |     (2 int)     
+feff           # A/F file  11: feff****.dat)    |     (ch4)       
+'./fasi/AuAu_5.75.2b.dat'  
+
+G       4b      #  Shell type                    -|-     (ch1)      
+1,24            # or: &string&   # coord.num.     |     (int real)  
+&#10*1.4142&   # or: &string&   # Distance       |     (int)       
+25             # or: &string&   # s^2            |     (int)       
+5,6            # n_de,n_gamma                   |     (2 int)     
+feff           # A/F file  11: feff****.dat)    |     (ch4)       
+'./fasi/AuAu_5.75.3b.dat'  
+
+G       4c      #  Shell type                    -|-     (ch1)      
+1,12            # or: &string&   # coord.num.     |     (int real)  
+&#10*1.4142&   # or: &string&   # Distance       |     (int)       
+26             # or: &string&   # s^2            |     (int)       
+5,6            # n_de,n_gamma                   |     (2 int)     
+feff           # A/F file  11: feff****.dat)    |     (ch4)       
+'./fasi/AuAu_5.75.4b.dat'  
+
+
+8.  3.e-4   max R/sig^2 for error analysis             (real)       
+
+set errdef 1.e-6
+seek
+minimize
+exit
+

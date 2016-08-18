@@ -1,0 +1,33 @@
+ fit of: Au_bulk_20k.exa                                                       
+ Number of shells:              7
+ Number of points:             479
+ Number of parameters (max):    10
+ K-range:                3.1198    -  18.995    
+                          INFO     
+ average std.dev on Chi(k)  =     0.18252E-02
+ wgt.std.dev  (k^wt Chi)    =     0.33706    
+ S/N ratio                  =      9.4852    
+ S/N_w ratio                =      5.5800    
+ ###  Least square found: F  =    0.57075E-05
+      R^2_w (norm. res.)     =    0.55026E-01
+      R^2_o (no wgt R^2)     =    0.97915E-01
+      Chi^2                  =     4219.7    
+      red._Chi^2             =     8.9973    
+      AIC_m                  =     4239.7    
+ ** if Filtered data: Nind=     3 chi^2_red =        23.59    
+Suggested errdef (65%)=    0.448E-06  0.105E-05
+  ================= 
+ General parameters: 
+ So^2=  0.9500
+                     
+ structural parameters:
+ Sh.   N     R         sigma^2    DE    gam      b1         b2          Type   A-F file
+             A          A^2       eV           A^3(C)      A^4    
+________________
+ 1G  12.000  2.8706  0.185E-02 11.762  0.000   0.00       0.00     Feff: ./fasi/AuAu_2.88.dat                                                            
+ 2G   6.000  4.0654  0.241E-02 11.762  0.000   0.00       0.00     Feff: ./fasi/AuAu_4.07.dat                                                            
+ 3G  24.000  4.9801  0.267E-02 11.762  0.000   0.00       0.00     Feff: ./fasi/AuAu_4.98.dat                                                            
+ 4G  12.000  5.7493  0.100     11.762  0.000   0.00       0.00     Feff: ./fasi/AuAu_5.75.2b.dat                                                         
+ 5G  24.000  5.7493  0.424E-02 11.762  0.000   0.00       0.00     Feff: ./fasi/AuAu_5.75.3b.dat                                                         
+ 6G  12.000  5.7493  0.336E-02 11.762  0.000   0.00       0.00     Feff: ./fasi/AuAu_5.75.4b.dat                                                         
+ 7G  24.000  6.4278  0.336E-02 11.762  0.000   0.00       0.00     Feff: ./fasi/AuAu_6.43.dat                                                            

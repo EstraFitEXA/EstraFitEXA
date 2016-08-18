@@ -3,7 +3,7 @@ from cx_Freeze import setup, Executable
 #includes = ["scipy.linalg","numpy"]
 #copyDependentFiles=True
 
-com_file=['EXAMPLE',
+com_file=['Tutorial_XAFS',
           'MANUALS',
           'FitEXA.exe',
           'ESTRA.exe',

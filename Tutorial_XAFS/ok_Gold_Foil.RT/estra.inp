@@ -1,0 +1,29 @@
+Au300K              # SAMPLE 
+c                   # option 
+Au_bulk_300k.dat                                                     
+2                   # data type (1-5)?
+1  2  3             # columns for Energy, Io and I_trasm.?
+0.0000      0.0000  # energy range?
+e                   # option 
+10000.0  11890.0    # limits (eV) for PRE EDGE (linear)fit
+-11920.0  0.80       # Max. energy and tolerance for edge search
+0                   # Number of glitches
+6                   # Number of spline intervals
+3.0 6.0 9.0 12.0 15.0 18.0  21.0
+   3   3   3    3     3    3       # degrees for splines 
+0                   # Number of secondary edges Ede, Ade, Wde
+3.10     6.00       # Limits for Jump evaluation (eV/k)
+n k 0.000           # constraints at the edge (n/J  E/k  wgt)
+0.99
+# ******  EXAFS done ********** 
+f                   # option 
+3.50  18.00         # K_min, K_max for the FT
+2                   # K-Weight for FT
+h                   # window: Gauss, Hanning, [N]one
+1                 # Gaussian width
+8.0  0.02           # R max and DR for FT
+b                   # option 
+1.20  3.50          # BF limits
+1.970               # expected <R> for the BF
+p                   # option 
+q                   # option 

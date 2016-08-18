@@ -1,0 +1,35 @@
+Zn oxide                   # SAMPLE 
+c                    # option 
+oxide_000.txt                                                     
+5                   # data type (1-5)?
+  4                 # number of files
+2                   # data type (1-5)?
+  2  3  4           # columns for Energy, Io and I_trasm.?
+      0.0000      0.0000          # energy range?
+oxide_001.txt
+ZnO_000.txt
+ZnO_001.txt
+e                    # option 
+ 9400.0  9640.0     # limits (eV) for PRE EDGE (linear)fit
+  9670.0  0.80       # Max. energy and tolerance for edge search
+   0                # Number of glitches
+  4                 # Number of spline intervals
+ 2.94  6.00  9.00  12.0  14.5  18   
+      3     3 3 3 3           # degrees for splines 
+   0                # Number of secondary edges Ede, Ade, Wde
+     3.10     6.00  # Limits for Jump evaluation (eV/k)
+j e 0.000           # constraints at the edge (n/J  E/k  wgt)
+0.7
+# ******  EXAFS done **********
+p                    # option 
+f                    # option 
+ 3.00  16.00        # K_min, K_max for the FT
+ 1                  # K-Weight for FT
+g                   # window: Gauss, Hanning, [N]one
+ 0.2                # Gaussian width
+  6.0  0.02         # R max and DR for FT
+b                    # option 
+ 0.50  3.50         # BF limits
+1.970               # expected <R> for the BF
+p                    # option 
+q                    # option 

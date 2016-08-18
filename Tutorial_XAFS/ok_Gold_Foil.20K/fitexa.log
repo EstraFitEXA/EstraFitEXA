@@ -1,0 +1,559 @@
+ ***************************************************************************
+  MINUIT RELEASE 96.03  INITIALIZED.   DIMENSIONS 100/ 50  EPSMAC=  0.89E-15
+ ***************************************************************************
+                          MINUIT DATA BLOCK NO.   1
+ ***************************************************************************
+ ***param-N|*param***|****value|****error|******min
+ ******************************************************************************
+
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 ' No       '    1.0000      constant
+     2 ' de       '    5.0000      0.20000E-01    -20.000       20.000    
+     3 ' gamma    '    0.0000      constant
+     4 ' so2      '   0.92000      0.20000E-02    0.80000      0.95000    
+     5 ' a1       '    4.0700      0.20000E-01     4.0000       4.1000    
+     6 ' a2       '    4.0700      0.20000E-01     4.0000       4.1000    
+     7 ' s1       '   0.75000E-02  0.10000E-02     0.0000      0.10000    
+     8 ' s2       '   0.10000E-01  0.10000E-02     0.0000      0.10000    
+     9 ' s3       '   0.15000E-01  0.10000E-02     0.0000      0.10000    
+    10 ' s4       '   0.15000E-01  0.10000E-02     0.0000      0.10000    
+    11 ' s5       '   0.15000E-01  0.10000E-02     0.0000      0.10000    
+    12 ' s6       '   0.15000E-01  0.10000E-02     0.0000      0.10000    
+    ***************************************************************************
+
+ MINUIT: FIRST CALL TO USER FUNCTION, WITH IFLAG=1
+ # now reading input params
+#### Input file data?
+input file: Au_bulk_20k.exa                                                     
+# Leading extension for output (A4)?
+Au20    # Leading extension for out (A4)?
+# columns for K and k*chi(k)?
+  1  2    # columns for K and k*chi(k)?
+# Input file :
+ Au_bulk_20k.exa                                                                
+  
+# skip first    11 lines from input file
+# read   579 data points back to FCN
+# X_min and X_max for fit (X_min<0 full range)
+   3.10000  19.00000     # X_min and X_max for fit
+ used fit limits:            3.1000 19.0000
+#### minimizes ((C(k)_e-C(k)_t) K^wt)^2    
+     Note: input data must be K^1 weighted 
+  2.000     # K-Weight for fit (WT)?
+  4
+# Number of shells? 
+    7       # Number of shells? 
+filter AF?  Y/N
+    kmin kmax wt apoT apoW Rup dr  rL rR
+def.: 0   0   0   0    0     0  0   0 0 
+def.: x1  x_m wt  2    1.   8  .03 .5 2 
+K-range:    3.11980  18.99507
+K-weight:    1.00000
+window  (1:H, 2:Gauss) and width:  2   0.50000
+Rmax, dr:    8.00   0.03000
+R-range in BF   0.50000   2.00000
+Number of independent data points    16.160
+# Shell type for shell 1
+# G: Gaussian, M: metallic glasses, C: cumulant
+G       # shell type 
+shell type: G
+# Parameter # and mult. for CN for shell  1
+ &#1*12.00
+# Parameter # for R 
+ &#6/1.4142
+# Parameter # for s^2 
+  n_S^2:   7
+# Parameter # for De and gamma
+  n_de:   2 n_gamma   3
+# A/F file type? 
+feff      standard feff####.dat   
+exp1      experimental: A_Exp, Ph_Exp
+exp2      experimental: A_Exp, Ph_Exp, L
+feff
+#### using A/F file:  feff####
+#  Amp: colum 3  Phi: columns 2+4
+AF file:./fasi/AuAu_2.88.dat                                                            
+# reading A/F file :
+./fasi/AuAu_2.88.dat                                                            
+# searcing comment lines in FEFF file
+# Found ----- line #:    9
+# Nleg=    2 Rfeff=     2.8779
+path   1 geometry
+     0.0000    0.0000    0.0000  0  79 Au       absorbing atom                
+    -2.0350   -2.0350    0.0000  1  79 Au                                     
+skip first  14 lines
+ read    59 data points 
+AF file correctly read
+# FIRST CALL to A/F interpolation: Amplitude
+# FIRST CALL to A/F interpolation: Phase
+# FIRST CALL to A/F interpolation: Lambda
+# Shell type for shell 2
+# G: Gaussian, M: metallic glasses, C: cumulant
+G       # shell type 
+shell type: G
+# Parameter # and mult. for CN for shell  2
+ &#1*6.00
+# Parameter # for R 
+  n_R:   5
+# Parameter # for s^2 
+  n_S^2:   8
+# Parameter # for De and gamma
+  n_de:   2 n_gamma   3
+# A/F file type? 
+feff
+#### using A/F file:  feff####
+#  Amp: colum 3  Phi: columns 2+4
+AF file:./fasi/AuAu_4.07.dat                                                            
+# reading A/F file :
+./fasi/AuAu_4.07.dat                                                            
+# searcing comment lines in FEFF file
+# Found ----- line #:    9
+# Nleg=    2 Rfeff=     4.0700
+path   2 geometry
+     0.0000    0.0000    0.0000  0  79 Au       absorbing atom                
+     4.0700    0.0000    0.0000  1  79 Au                                     
+skip first  14 lines
+ read    59 data points 
+AF file correctly read
+# FIRST CALL to A/F interpolation: Amplitude
+# FIRST CALL to A/F interpolation: Phase
+# FIRST CALL to A/F interpolation: Lambda
+# Shell type for shell 3
+# G: Gaussian, M: metallic glasses, C: cumulant
+G       # shell type 
+shell type: G
+# Parameter # and mult. for CN for shell  3
+ &#1*24.00
+# Parameter # for R 
+ &#5*1.225
+# Parameter # for s^2 
+  n_S^2:   9
+# Parameter # for De and gamma
+  n_de:   2 n_gamma   3
+# A/F file type? 
+feff
+#### using A/F file:  feff####
+#  Amp: colum 3  Phi: columns 2+4
+AF file:./fasi/AuAu_4.98.dat                                                            
+# reading A/F file :
+./fasi/AuAu_4.98.dat                                                            
+# searcing comment lines in FEFF file
+# Found ----- line #:    9
+# Nleg=    2 Rfeff=     4.9847
+path   3 geometry
+     0.0000    0.0000    0.0000  0  79 Au       absorbing atom                
+     2.0350    2.0350   -4.0700  1  79 Au                                     
+skip first  14 lines
+ read    59 data points 
+AF file correctly read
+# FIRST CALL to A/F interpolation: Amplitude
+# FIRST CALL to A/F interpolation: Phase
+# FIRST CALL to A/F interpolation: Lambda
+# Shell type for shell 4
+# G: Gaussian, M: metallic glasses, C: cumulant
+G       # shell type 
+shell type: G
+# Parameter # and mult. for CN for shell  4
+ &#1*12.00
+# Parameter # for R 
+ &#5*1.4142
+# Parameter # for s^2 
+  n_S^2:  10
+# Parameter # for De and gamma
+  n_de:   2 n_gamma   3
+# A/F file type? 
+feff
+#### using A/F file:  feff####
+#  Amp: colum 3  Phi: columns 2+4
+AF file:./fasi/AuAu_5.75.2b.dat                                                         
+# reading A/F file :
+./fasi/AuAu_5.75.2b.dat                                                         
+# searcing comment lines in FEFF file
+# Found ----- line #:    9
+# Nleg=    2 Rfeff=     5.7558
+path   4 geometry
+     0.0000    0.0000    0.0000  0  79 Au       absorbing atom                
+     0.0000   -4.0700   -4.0700  1  79 Au                                     
+skip first  14 lines
+ read    59 data points 
+AF file correctly read
+# FIRST CALL to A/F interpolation: Amplitude
+# FIRST CALL to A/F interpolation: Phase
+# FIRST CALL to A/F interpolation: Lambda
+# Shell type for shell 5
+# G: Gaussian, M: metallic glasses, C: cumulant
+G       # shell type 
+shell type: G
+# Parameter # and mult. for CN for shell  5
+ &#1*24.00
+# Parameter # for R 
+ &#5*1.4142
+# Parameter # for s^2 
+  n_S^2:  11
+# Parameter # for De and gamma
+  n_de:   2 n_gamma   3
+# A/F file type? 
+feff
+#### using A/F file:  feff####
+#  Amp: colum 3  Phi: columns 2+4
+AF file:./fasi/AuAu_5.75.3b.dat                                                         
+# reading A/F file :
+./fasi/AuAu_5.75.3b.dat                                                         
+# searcing comment lines in FEFF file
+# Found ----- line #:    9
+# Nleg=    3 Rfeff=     5.7558
+path   5 geometry
+     0.0000    0.0000    0.0000  0  79 Au       absorbing atom                
+     0.0000    4.0700    4.0700  1  79 Au                                     
+     0.0000    2.0350    2.0350  1  79 Au                                     
+skip first  15 lines
+ read    59 data points 
+AF file correctly read
+# FIRST CALL to A/F interpolation: Amplitude
+# FIRST CALL to A/F interpolation: Phase
+# FIRST CALL to A/F interpolation: Lambda
+# Shell type for shell 6
+# G: Gaussian, M: metallic glasses, C: cumulant
+G       # shell type 
+shell type: G
+# Parameter # and mult. for CN for shell  6
+ &#1*12.00
+# Parameter # for R 
+ &#5*1.4142
+# Parameter # for s^2 
+  n_S^2:  12
+# Parameter # for De and gamma
+  n_de:   2 n_gamma   3
+# A/F file type? 
+feff
+#### using A/F file:  feff####
+#  Amp: colum 3  Phi: columns 2+4
+AF file:./fasi/AuAu_5.75.4b.dat                                                         
+# reading A/F file :
+./fasi/AuAu_5.75.4b.dat                                                         
+# searcing comment lines in FEFF file
+# Found ----- line #:    9
+# Nleg=    4 Rfeff=     5.7558
+path   6 geometry
+     0.0000    0.0000    0.0000  0  79 Au       absorbing atom                
+     0.0000    2.0350    2.0350  1  79 Au                                     
+     0.0000    4.0700    4.0700  1  79 Au                                     
+     0.0000    2.0350    2.0350  1  79 Au                                     
+skip first  16 lines
+ read    59 data points 
+AF file correctly read
+# FIRST CALL to A/F interpolation: Amplitude
+# FIRST CALL to A/F interpolation: Phase
+# FIRST CALL to A/F interpolation: Lambda
+# Shell type for shell 7
+# G: Gaussian, M: metallic glasses, C: cumulant
+G       # shell type 
+shell type: G
+# Parameter # and mult. for CN for shell  7
+ &#1*24.00
+# Parameter # for R 
+ &#5*1.5811
+# Parameter # for s^2 
+  n_S^2:  12
+# Parameter # for De and gamma
+  n_de:   2 n_gamma   3
+# A/F file type? 
+feff
+#### using A/F file:  feff####
+#  Amp: colum 3  Phi: columns 2+4
+AF file:./fasi/AuAu_6.43.dat                                                            
+# reading A/F file :
+./fasi/AuAu_6.43.dat                                                            
+# searcing comment lines in FEFF file
+# Found ----- line #:    9
+# Nleg=    2 Rfeff=     6.4352
+path   7 geometry
+     0.0000    0.0000    0.0000  0  79 Au       absorbing atom                
+    -6.1050   -2.0350    0.0000  1  79 Au                                     
+skip first  14 lines
+ read    59 data points 
+AF file correctly read
+# FIRST CALL to A/F interpolation: Amplitude
+# FIRST CALL to A/F interpolation: Phase
+# FIRST CALL to A/F interpolation: Lambda
+Fourier tranform:  F
+Statistical analysis:  S
+#############  sigma?   
+ s > 1      FT method up to R=s 
+ 0 < s < 1  constant value s    
+ s = 0     spline evaluation   
+ s = -1  spline evaluation and wariable w_i
+ s < -1   FT method up to R=|s| and wariable w_i
+sigma =   8.00000
+#########  Statistics ##############
+noise is estimated by Fourier filter
+Estimated std.dev data (chi):0.1825E-02
+Estimated Variance  (chi):0.3331E-05
+######## end input,
+  
+ sgnl=sqrt(<C^2>)             =     0.17312E-01
+ Wgt sgnl=sqrt(<(k^w * C)^2>) =      1.8808    
+ 
+ std.dev  s_chi             =     0.18252E-02
+ variance (chi)  s^2_chi    =     0.33313E-05
+ wgt.std.dev          s_wt  =     0.33706    
+ wgt.var.            s2_wt  =     0.11361    
+ 
+ sig/noise                 =      9.4852    
+ sig/noise wgt             =      5.5800    
+  
+ inital F:     0.90423E-04
+ inital Ro^2:      64.165    
+ inital R^2:     0.87177    
+
+ FCN=  0.9042298E-04 FROM PARAMETR  STATUS=RESET          2 CALLS        2 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+
+  EXT PARAMETER               CURRENT GUESS      PHYSICAL LIMITS       
+  NO.   NAME        VALUE          ERROR       NEGATIVE      POSITIVE  
+   1     No         1.0000       constant   
+   2     de         5.0000       0.20000E-01   -20.000        20.000    
+   3     gamma      0.0000       constant   
+   4     so2       0.92000       0.20000E-02   0.80000       0.95000    
+   5     a1         4.0700       0.20000E-01    4.0000        4.1000    
+   6     a2         4.0700       0.20000E-01    4.0000        4.1000    
+   7     s1        0.75000E-02   0.10000E-02    0.0000       0.10000    
+   8     s2        0.10000E-01   0.10000E-02    0.0000       0.10000    
+   9     s3        0.15000E-01   0.10000E-02    0.0000       0.10000    
+  10     s4        0.15000E-01   0.10000E-02    0.0000       0.10000    
+  11     s5        0.15000E-01   0.10000E-02    0.0000       0.10000    
+  12     s6        0.15000E-01   0.10000E-02    0.0000       0.10000    
+ **********
+ **    1 ** 
+ **********
+           BLANK COMMAND IGNORED.
+ **********
+ **    2 ** 
+ **********
+           BLANK COMMAND IGNORED.
+ **********
+ **    3 ** 
+ **********
+           BLANK COMMAND IGNORED.
+ **********
+ **    4 **SET ERRDEF   0.1000E-05
+ **********
+ **********
+ **    5 **SEEK 
+ **********
+ MNSEEK: MONTE CARLO MINIMIZATION USING METROPOLIS ALGORITHM
+ TO STOP AFTER   300 SUCCESSIVE FAILURES, OR   3000 STEPS
+ MAXIMUM STEP SIZE IS    3.000 ERROR BARS.
+
+ FCN=  0.2313597E-04 FROM SEEk      STATUS=IMPROVEMNT   793 CALLS      795 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+
+  EXT PARAMETER               CURRENT GUESS    INTERNAL      INTERNAL  
+  NO.   NAME        VALUE          ERROR       STEP SIZE       VALUE   
+   1     No         1.0000       constant   
+   2     de         4.9032       0.20000E-01   0.61968E-02   0.24768    
+   3     gamma      0.0000       constant   
+   4     so2       0.92252       0.20000E-02   0.20000       0.68617    
+   5     a1         4.0354       0.20000E-01    2.6186       -2.8454    
+   6     a2         4.0453       0.20000E-01    2.6186      -0.93416E-01
+   7     s1        0.18629E-02   0.10000E-02   0.22780       -1.2970    
+   8     s2        0.15359E-01   0.10000E-02   0.20000      -0.76538    
+   9     s3        0.20102E-01   0.10000E-02   0.16803      -0.64094    
+  10     s4        0.20786E-01   0.10000E-02   0.16803      -0.62398    
+  11     s5        0.96080E-02   0.10000E-02   0.16803      -0.94048    
+  12     s6        0.41023E-02   0.10000E-02   0.16803       -1.1629    
+                               ERR DEF= 0.100E-05
+ **********
+ **    6 **MINIMIZE 
+ **********
+ START MIGRAD MINIMIZATION.  STRATEGY 1.  CONVERGENCE WHEN EDM .LT. 0.10E-09
+
+ FCN=  0.1547188E-04 FROM MIGRAD    STATUS=INITIATE     107 CALLS      902 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME        VALUE          ERROR          SIZE      DERIVATIVE 
+   1     No         1.0000       constant   
+   2     de         4.9032       0.20000E-01    0.0000      -0.16493E-04
+   3     gamma      0.0000       constant   
+   4     so2       0.92252       0.20000E-02    0.0000       0.37921E-06
+   5     a1         4.0354       0.20000E-01    0.0000       0.19736E-04
+   6     a2         4.0453       0.20000E-01    0.0000       0.62937E-05
+   7     s1        0.18629E-02   0.10000E-02    0.0000       0.18068E-04
+   8     s2        0.28322E-02   0.10000E-02    0.0000       0.28807E-06
+   9     s3        0.24225E-02   0.10000E-02  -0.61729      -0.45058E-04
+  10     s4        0.20786E-01   0.10000E-02    0.0000      -0.35188E-06
+  11     s5        0.96080E-02   0.10000E-02    0.0000       0.73331E-05
+  12     s6        0.41023E-02   0.10000E-02    0.0000      -0.37938E-05
+                               ERR DEF= 0.100E-05
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+
+ FCN=  0.5708465E-05 FROM HESSE     STATUS=OK            86 CALLS     1408 TOTAL
+                     EDM=  0.71E-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME        VALUE          ERROR          SIZE      DERIVATIVE 
+   1     No         1.0000       constant   
+   2     de         11.769        2.7917       0.10969E-03  -0.12701E-07
+   3     gamma      0.0000       constant   
+   4     so2       0.95000       0.75987E-01   0.53824E-02   0.41306E-09
+   5     a1         4.0654       0.10556E-01   0.15138E-03  -0.15085E-07
+   6     a2         4.0596       0.86619E-02   0.14471E-03   0.16338E-07
+   7     s1        0.18527E-02   0.25632E-03   0.23891E-04   0.67836E-08
+   8     s2        0.24113E-02   0.14736E-02   0.12089E-03  -0.69596E-08
+   9     s3        0.26668E-02   0.71184E-03   0.55822E-04   0.66080E-09
+  10     s4        0.78759E-01   0.84985E-01   0.70720E-02  -0.24489E-08
+  11     s5        0.42415E-02   0.17800E-02   0.61295E-04   0.62739E-07
+  12     s6        0.33546E-02   0.80128E-03   0.37571E-04  -0.11425E-06
+                               ERR DEF= 0.100E-05
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+
+ FCN=  0.5707507E-05 FROM MIGRAD    STATUS=CONVERGED    637 CALLS     1432 TOTAL
+                     EDM=  0.82E-11  STRATEGY=1  ERROR MATRIX UNCERTAINTY=  9.3%
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME        VALUE          ERROR          SIZE      DERIVATIVE 
+   1     No         1.0000       constant   
+   2     de         11.755        2.7762      -0.82705E-03  -0.14964E-07
+   3     gamma      0.0000       constant   
+   4     so2       0.95000       0.76060E-01  -0.14382E-01  -0.26948E-09
+   5     a1         4.0654       0.10530E-01   0.71193E-03   0.70365E-08
+   6     a2         4.0596       0.86174E-02  -0.82120E-03  -0.97030E-08
+   7     s1        0.18528E-02   0.25631E-03   0.49710E-05   0.53425E-08
+   8     s2        0.24109E-02   0.14734E-02   0.26182E-04   0.37345E-08
+   9     s3        0.26668E-02   0.71185E-03   0.18183E-05  -0.17012E-11
+  10     s4        0.99968E-01   0.96643E-01   0.92197      -0.58704E-10
+  11     s5        0.42408E-02   0.17799E-02  -0.32769E-04  -0.34828E-07
+  12     s6        0.33557E-02   0.80115E-03   0.58175E-04   0.68157E-07
+                               ERR DEF= 0.100E-05
+
+ EXTERNAL ERROR MATRIX.    NDIM=  50    NPAR= 10    ERR DEF= 0.100E-05
+  0.778E+01-0.398E-04-0.204E-01 0.184E-01-0.250E-04 0.152E-03-0.350E-04-0.591E-02-0.120E-03 0.664E-04
+ -0.398E-04 0.750E-05 0.109E-06-0.101E-06-0.328E-07 0.302E-07-0.361E-07 0.875E-07-0.386E-07-0.344E-07
+ -0.204E-01 0.109E-06 0.113E-03-0.478E-04 0.545E-07-0.107E-05 0.293E-06 0.148E-04 0.836E-05 0.871E-06
+  0.184E-01-0.101E-06-0.478E-04 0.750E-04-0.139E-06 0.492E-06-0.293E-07-0.141E-04-0.373E-06 0.428E-07
+ -0.250E-04-0.328E-07 0.545E-07-0.139E-06 0.657E-07 0.267E-07 0.397E-08-0.139E-07 0.482E-08 0.829E-09
+  0.152E-03 0.302E-07-0.107E-05 0.492E-06 0.267E-07 0.218E-05-0.624E-08-0.651E-07-0.133E-06-0.435E-07
+ -0.350E-04-0.361E-07 0.293E-06-0.293E-07 0.397E-08-0.624E-08 0.507E-06-0.320E-07 0.315E-07 0.632E-08
+ -0.591E-02 0.875E-07 0.148E-04-0.141E-04-0.139E-07-0.651E-07-0.320E-07 0.249E-02 0.482E-07-0.500E-07
+ -0.120E-03-0.386E-07 0.836E-05-0.373E-06 0.482E-08-0.133E-06 0.315E-07 0.482E-07 0.318E-05 0.979E-06
+  0.664E-04-0.344E-07 0.871E-06 0.428E-07 0.829E-09-0.435E-07 0.632E-08-0.500E-07 0.979E-06 0.642E-06
+
+ PARAMETER  CORRELATION COEFFICIENTS
+       NO.  GLOBAL     2     4     5     6     7     8     9    10    11    12
+        2  0.86414  1.000-0.005-0.690 0.760-0.035 0.037-0.018-0.042-0.024 0.030
+        4  0.05391 -0.005 1.000 0.004-0.004-0.047 0.007-0.018 0.001-0.008-0.016
+        5  0.84411 -0.690 0.004 1.000-0.519 0.020-0.068 0.039 0.028 0.442 0.102
+        6  0.76149  0.760-0.004-0.519 1.000-0.063 0.038-0.005-0.033-0.024 0.006
+        7  0.11251 -0.035-0.047 0.020-0.063 1.000 0.071 0.022-0.001 0.011 0.004
+        8  0.10634  0.037 0.007-0.068 0.038 0.071 1.000-0.006-0.001-0.050-0.037
+        9  0.05170 -0.018-0.018 0.039-0.005 0.022-0.006 1.000-0.001 0.025 0.011
+       10  0.04261 -0.042 0.001 0.028-0.033-0.001-0.001-0.001 1.000 0.001-0.001
+       11  0.83714 -0.024-0.008 0.442-0.024 0.011-0.050 0.025 0.001 1.000 0.686
+       12  0.74595  0.030-0.016 0.102 0.006 0.004-0.037 0.011-0.001 0.686 1.000
+ **********
+ **    7 **REL    7.000    
+ **********
+ PARAMETER   7 ALREADY VARIABLE. IGNORED.
+ **********
+ **    8 **MIGRAD 
+ **********
+ START MIGRAD MINIMIZATION.  STRATEGY 1.  CONVERGENCE WHEN EDM .LT. 0.10E-09
+
+ FCN=  0.5707507E-05 FROM MIGRAD    STATUS=INITIATE      20 CALLS     1452 TOTAL
+                     EDM=  0.11E-10  STRATEGY=1  ERROR MATRIX UNCERTAINTY=  9.3%
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME        VALUE          ERROR          SIZE      DERIVATIVE 
+   1     No         1.0000       constant   
+   2     de         11.755        2.7762      -0.82705E-03  -0.14964E-07
+   3     gamma      0.0000       constant   
+   4     so2       0.95000       0.76060E-01  -0.14382E-01  -0.26948E-09
+   5     a1         4.0654       0.10530E-01   0.71193E-03   0.70365E-08
+   6     a2         4.0596       0.86174E-02  -0.82120E-03  -0.97030E-08
+   7     s1        0.18528E-02   0.25631E-03   0.49710E-05   0.53425E-08
+   8     s2        0.24109E-02   0.14734E-02   0.26182E-04   0.37345E-08
+   9     s3        0.26668E-02   0.71185E-03   0.18183E-05  -0.17010E-11
+  10     s4        0.99968E-01   0.96643E-01   0.92197      -0.58704E-10
+  11     s5        0.42408E-02   0.17799E-02  -0.32769E-04  -0.34828E-07
+  12     s6        0.33557E-02   0.80115E-03   0.58175E-04   0.68157E-07
+                               ERR DEF= 0.100E-05
+
+ MIGRAD MINIMIZATION HAS CONVERGED.
+
+ FCN=  0.5707498E-05 FROM MIGRAD    STATUS=CONVERGED     41 CALLS     1473 TOTAL
+                     EDM=  0.18E-12  STRATEGY=1  ERROR MATRIX UNCERTAINTY=  5.9%
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME        VALUE          ERROR          SIZE      DERIVATIVE 
+   1     No         1.0000       constant   
+   2     de         11.762        2.7833       0.40642E-03  -0.46979E-09
+   3     gamma      0.0000       constant   
+   4     so2       0.95000       0.75802E-01   0.57195E-02** at limit **
+   5     a1         4.0654       0.10545E-01  -0.34785E-03   0.13426E-09
+   6     a2         4.0596       0.86361E-02   0.38201E-03  -0.24966E-09
+   7     s1        0.18527E-02   0.25595E-03  -0.39866E-05  -0.55376E-08
+   8     s2        0.24110E-02   0.14736E-02  -0.62682E-05   0.31485E-09
+   9     s3        0.26668E-02   0.71174E-03  -0.23325E-05  -0.90810E-09
+  10     s4        0.99993E-01   0.98829E-01   0.19741E-01  -0.26321E-10
+  11     s5        0.42410E-02   0.17801E-02   0.91259E-05  -0.43748E-09
+  12     s6        0.33553E-02   0.80028E-03  -0.22502E-04   0.26757E-09
+                               ERR DEF= 0.100E-05
+
+ EXTERNAL ERROR MATRIX.    NDIM=  50    NPAR= 10    ERR DEF= 0.100E-05
+  0.782E+01-0.231E-05-0.206E-01 0.185E-01-0.140E-04 0.142E-03-0.228E-04 0.386E-02-0.108E-03 0.758E-04
+ -0.231E-05 0.318E-08 0.591E-08-0.635E-08-0.579E-09 0.571E-09-0.642E-09 0.457E-07-0.761E-09-0.528E-09
+ -0.206E-01 0.591E-08 0.113E-03-0.481E-04 0.270E-07-0.104E-05 0.262E-06-0.976E-05 0.833E-05 0.848E-06
+  0.185E-01-0.635E-08-0.481E-04 0.754E-04-0.108E-06 0.462E-06 0.570E-08 0.122E-04-0.340E-06 0.697E-07
+ -0.140E-04-0.579E-09 0.270E-07-0.108E-06 0.655E-07 0.266E-07 0.380E-08-0.320E-07 0.504E-08 0.541E-10
+  0.142E-03 0.571E-09-0.104E-05 0.462E-06 0.266E-07 0.218E-05-0.636E-08-0.149E-06-0.133E-06-0.430E-07
+ -0.228E-04-0.642E-09 0.262E-06 0.570E-08 0.380E-08-0.636E-08 0.507E-06-0.212E-07 0.318E-07 0.549E-08
+  0.386E-02 0.457E-07-0.976E-05 0.122E-04-0.320E-07-0.149E-06-0.212E-07 0.539E-03 0.230E-06-0.395E-06
+ -0.108E-03-0.761E-09 0.833E-05-0.340E-06 0.504E-08-0.133E-06 0.318E-07 0.230E-06 0.318E-05 0.979E-06
+  0.758E-04-0.528E-09 0.848E-06 0.697E-07 0.541E-10-0.430E-07 0.549E-08-0.395E-06 0.979E-06 0.641E-06
+
+ PARAMETER  CORRELATION COEFFICIENTS
+       NO.  GLOBAL     2     4     5     6     7     8     9    10    11    12
+        2  0.86488  1.000-0.015-0.691 0.761-0.020 0.034-0.011 0.059-0.022 0.034
+        4  0.06005 -0.015 1.000 0.010-0.013-0.040 0.007-0.016 0.035-0.008-0.012
+        5  0.84465 -0.691 0.010 1.000-0.521 0.010-0.066 0.035-0.040 0.440 0.100
+        6  0.76271  0.761-0.013-0.521 1.000-0.049 0.036 0.001 0.061-0.022 0.010
+        7  0.10448 -0.020-0.040 0.010-0.049 1.000 0.070 0.021-0.005 0.011 0.000
+        8  0.10485  0.034 0.007-0.066 0.036 0.070 1.000-0.006-0.004-0.051-0.036
+        9  0.04944 -0.011-0.016 0.035 0.001 0.021-0.006 1.000-0.001 0.025 0.010
+       10  0.08539  0.059 0.035-0.040 0.061-0.005-0.004-0.001 1.000 0.006-0.021
+       11  0.83754 -0.022-0.008 0.440-0.022 0.011-0.051 0.025 0.006 1.000 0.686
+       12  0.74686  0.034-0.012 0.100 0.010 0.000-0.036 0.010-0.021 0.686 1.000
+ **********
+ **    9 **EXIT 
+ **********
+
+ CALL TO USER FUNCTION WITH IFLAG = 3
+
+ ########## END ---- writing last!
+####### => final F:     0.57075E-05
+ final Ro^2:      4.6401    
+####### => final R^2:     0.55026E-01
+######### end fit writing output
+ ###  Least square found: F  =    0.57075E-05
+      R^2_w (norm. res.) =    0.55026E-01
+      R^2_o (no wgt R^2) =    0.97915E-01
+      Chi^2              =     4219.7    
+      red._Chi^2         =     8.9973    
+      AIC_m                  =     4239.7    
+Filter A/F using K-range:   3.120        19.00    
+Filter A/F using K-range:   3.120        19.00    
+Filter A/F using K-range:   3.120        19.00    
+Filter A/F using K-range:   3.120        19.00    
+Filter A/F using K-range:   3.120        19.00    
+Filter A/F using K-range:   3.120        19.00    
+Filter A/F using K-range:   3.120        19.00    
+Filter A/F using K-range:   3.120        19.00    
+Filter A/F using K-range:   3.120        19.00    
+ ..........MINUIT TERMINATED BY MINUIT COMMAND: EXIT                 

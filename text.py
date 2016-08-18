@@ -16,14 +16,15 @@ class Quitter(Frame):
 
 
 class ScrolledText(Frame):
-    def __init__(self, parent=None, text='', file=None, active=True, hor=False):
+    def __init__(self, parent=None, text='', filex=None, active=True, hor=True):
         Frame.__init__(self, parent)
+        self.active=active
         self.pack(expand=YES, fill=BOTH)               
         self.makewidgets(hor)
-        self.settext(text, file)
+        self.settext(text, filex)
     def makewidgets(self,hor):
         sbar = Scrollbar(self)
-        text = Text(self, relief=SUNKEN)
+        text = Text(self, relief=SUNKEN, font=("courier",9))
         sbar.config(command=text.yview)                  
         text.config(yscrollcommand=sbar.set) 
         if hor:
@@ -34,21 +35,24 @@ class ScrolledText(Frame):
         sbar.pack(side=RIGHT, fill=Y)                   
         text.pack(side=LEFT, expand=YES, fill=BOTH)     
         self.text = text
-    def settext(self, text='', file=None):
-        if file: 
-            text = open(file, 'r').read()
+    def settext(self, text='', filex=None):
+        if filex: 
+            text = open(filex, 'r').read()
+        if not(self.active):
+            self.text.config(state=NORMAL)            
         self.text.delete('1.0', END)                   
         self.text.insert('1.0', text)                  
         self.text.mark_set(INSERT, '1.0')
-        self.text.config(state=DISABLED)
-        #self.text.focus()                                
+        if not(self.active):
+            self.text.config(state=DISABLED)
+        self.text.focus()                                
     def gettext(self):                               
         return self.text.get('1.0', END+'-1c')         
 
 
 
 class SimpleEditor(ScrolledText):                        
-    def __init__(self, parent=None, file=None): 
+    def __init__(self, parent=None, filex=None): 
         frm = Frame(parent)
         frm.pack(fill=X)
         Button(frm, text='Save',  command=self.onSave).pack(side=LEFT)
@@ -56,8 +60,9 @@ class SimpleEditor(ScrolledText):
         Button(frm, text='Paste', command=self.onPaste).pack(side=LEFT)
         Button(frm, text='Find',  command=self.onFind).pack(side=LEFT)
         Quitter(frm).pack(side=LEFT)
-        ScrolledText.__init__(self, parent, file=file) 
+        ScrolledText.__init__(self, parent, filex=filex) 
         self.text.config(font=('courier', 9, 'normal'))
+        self.filex=filex
     def onSave(self):
         filename = asksaveasfilename()
         if filename:
@@ -85,7 +90,22 @@ class SimpleEditor(ScrolledText):
                 self.text.tag_add(SEL, where, pastit)     
                 self.text.mark_set(INSERT, pastit)         
                 self.text.see(INSERT)                    
-                self.text.focus()                        
+                self.text.focus() 
+                
+class InpEditor(SimpleEditor):
+    def __init__(self, parent=None, filex=None): 
+        frm = Frame(parent)
+        frm.pack(fill=X)
+        Button(frm, text='Save',  command=self.onSave).pack(side=LEFT)
+        Button(frm, text='Cut',   command=self.onCut).pack(side=LEFT)
+        Button(frm, text='Paste', command=self.onPaste).pack(side=LEFT)
+        ScrolledText.__init__(self, parent, filex=filex) 
+        self.text.config(font=('courier', 9, 'normal'))
+        self.filex=filex        
+    def onSave(self):
+        alltext = self.gettext()                      
+        open(self.filex, 'w').write(alltext)
+        
 
 if __name__ == '__main__':
     try:

@@ -1,0 +1,383 @@
+  ************************************* 
+  **    Extraction of EXAFS data     ** 
+  **    version 2009                 ** 
+  **                    -.-2009      ** 
+  **                                 ** 
+  **                                 ** 
+  ** C. Meneghini meneghini@esrf.fr  ** 
+  **                                 ** 
+  **  F. Bardelli  bardelli@esrf.fr  ** 
+  **                                 ** 
+  ************************************* 
+  ** parameter size:                 ** 
+  ** # points 4096                  ** 
+  **                                 ** 
+  **                                 ** 
+  ************************************* 
+  
+ # Sample? (a10)
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+ *** Read and convert raw data *******
+******** conversion of XAS data ***********
+   version 3.0 
+*******************************************
+INPUT: experimental ascii file(s)
+ fluorescence, absorption, multidetectors data
+OUTPUT: ascii file
+sample: Au300K                                  
+Input file (ascii file)?
+output file: Au_bulk_20k.abs                                                       
+data type ?
+ 1) E - alpha
+ 2) E - Io - I_trasm.
+ 3) E - Io - I_fluor.
+ 4) multidetector fluorescence
+               E - Io -I_f1... I_fn  
+ 5) average of several data files    
+  1
+ columns for Energy and Alpha ?
+  reading file: Au_bulk_20k.dat                                                       
+ Reading experimental file :Au_bulk_20k.dat                                                       
+ firs lines beginning with # are comments
+# XDI/1.0 Athena/0.9.21                                                       
+# Element.edge:                  L3                                           
+# Element.symbol:                Au                                           
+# Column.1:                      energy eV                                    
+# Column.2:                      xmu                                          
+# Column.3:                      bkg                                          
+# Column.4:                      pre_edge                                     
+# Column.5:                      post_edge                                    
+# Column.6:                      der                                          
+# Column.7:                      sec                                          
+# Column.8:                      i0                                           
+# Athena.e0:                     11920.08429                                  
+# Athena.eshift:                 0                                            
+# Athena.rbkg:                   1.0                                          
+# Athena.importance:             1                                            
+# Athena.standard:               None                                         
+# Athena.bkg_kweight:            2                                            
+# Athena.edge_step:              0.9178349                                    
+# Athena.fixed_step:             no                                           
+# Athena.pre_edge_range:         -150.000 -30.000                             
+# Athena.pre_edge_line:          4.952595 - 0.00032483 * E                    
+# Athena.normalization_range:    150.000 1676.466                             
+# Athena.post_edge_polynomial:   13.110132 - 0.00131986 * E + 3.25230595e-008 
+# Athena.spline_range_energy:    0.000 1776.434                               
+# Athena.clamps:                 0 24                                         
+# Athena.spline_range_k:         0.000 21.593                                 
+# Athena.kweight:                2                                            
+# Athena.window:                 hanning                                      
+# Athena.phase_correction:       no                                           
+# Athena.k_range:                3.000 19.593                                 
+# Athena.dk:                     1                                            
+# Athena.r_range:                1 3                                          
+# Athena.dr:                     0.0                                          
+# Athena.window:                 hanning                                      
+# Athena.plot_multiplier:        1                                            
+# Athena.y_offset:               0                                            
+# ///                                                                         
+#------------------------                                                     
+#   e         xmu        bkg        pre_edge        post_edge        der      
+  11699.999        1.1639840        1.1639840        1.1520861        2.119843
+ skip first  39 lines 
+ read   630 data points
+  file read
+ energy range? (if Emin le 0 full range)
+treated   630 points between: 11699.999000 13696.550000
+========= end conversion ======
+========== writing output file ==========
+ 
+Conversion Done, OUTPUT WRITTEN ON: Au_bulk_20k.abs                                                       
+working file:  
+Au_bulk_20k.abs                                                       
+status: c . e . f . b 
+        1   0   0   0
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+ *** EXTRACTING EXAFS *******
+******** extraction of EXAFS data *********
+*   version 2009 - Beta           *********
+* Does not WORK WITH OLD INPUT FILES! *****
+*             version 2009            *****
+*******************************************
+*******************************************
+ 
+ INPUT: ascii file  Energy-alpha(E) 
+ OUTPUT: ascii files 
+ Sample: Au300K                                  
+ Extracting EXAFS from converted data:
+Au_bulk_20k.abs                                                       
+ output file: Au_bulk_20k.exa                                                       
+ info on extraction: Au_bulk_20k.pre                                                       
+Data between   0.1170E+05 and   0.1370E+05
+************************************
+***                              ***
+**  Subtraction linear pre-edge   **
+***                              ***
+************************************
+ limits (eV) for PRE EDGE (linear)fit ?
+Pre edge limits:11699.9990 11883.1540
+Linear fit:  -.397981E-03 * E +  5.81755    
+Max. energy and tolerance for edge search?
+ if E2 < 0: edge energy fixed at -E2
+ Fixed edge energy:     11915.00000
+wl:        0.970400 ewl:    11947.036000
+ K_max of data:   21.6235
+ Number of glitches 0:none
+N. Glitch =  0
+ Number of spline intervals ? max:   10
+knots?   6+1 ( < 60 means in K-space)
+   11949.2916499417        12052.1665997668        12223.6248494754     
+   12463.6663990673        12772.2912485427        13149.4993979015     
+   13595.2908471437     
+degrees ?
+#### Secondary edges
+ Number of secondary edges?  0:none
+   0    Number of secondary edges: 
+ E_de(E or K) A_de(amp/wl) W_de (wdt, eV)
+Note: Amplitude will be normalized by white line:   0.97040    
+     if E_de < Eo position in K
+ Edge   Energy        ampl.       width      ampl*wl
+   
+ Limits for jump evaluation (eV/k) 
+####### Limits for jump evaluation (E-Eo) 
+    36.62   137.17
+####### norm_flg=   1
+    Normalize by spline(E)
+   
+### constraints at the edge (n/J  E/k  wgt)? 
+ n/J: none or fixed jump
+ E/k: energy or K weight
+ wgt: x^(wgt) weith of splines 0.0=cost
+n/J =  n
+E/K =  K
+weigth =  X^      0.00
+number of coefficients:   14
+number of free params/interval:
+   4.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+ degrees:
+           3           3           3           3           3           3
+  1      3.0000      6.0000
+  2      6.0000      9.0000
+  3      9.0000     12.0000
+  4     12.0000     15.0000
+  5     15.0000     18.0000
+  6     18.0000     21.0000
+number of coefficients:   14
+#### Polynomial spline ####
+#### A  Matrix ####
+ 544.     0.673E+04 0.978E+05 0.156E+07 0.364E+05 0.410E+06 0.187E+05
+0.673E+04 0.978E+05 0.156E+07 0.263E+08 0.629E+06 0.736E+07 0.336E+06
+0.978E+05 0.156E+07 0.263E+08 0.461E+09 0.111E+08 0.134E+09 0.613E+07
+0.156E+07 0.263E+08 0.461E+09 0.828E+10 0.201E+09 0.249E+10 0.113E+09
+0.364E+05 0.629E+06 0.111E+08 0.201E+09 0.490E+07 0.609E+08 0.277E+07
+0.410E+06 0.736E+07 0.134E+09 0.249E+10 0.609E+08 0.777E+09 0.352E+08
+0.187E+05 0.336E+06 0.613E+07 0.113E+09 0.277E+07 0.352E+08 0.159E+07
+ 
+#### Y Vector  ####
+ 460.    
+0.557E+04
+0.797E+05
+0.126E+07
+0.292E+05
+0.326E+06
+0.149E+05
+#### Coefficients  ####
+0.761E-01
+0.537    
+-.112    
+0.760E-02
+-.321E-01
+-.637E-02
+-.737E-02
+###### exit from polspline
+###    spline coefficients   E and K
+# first intervall:  11949.3      12052.2      56.001 56.242 
+ coef   1    0.7607857324E-01
+ coef   2    0.5370223646    
+ coef   3   -0.1124090344    
+ coef   4    0.7600665089E-02
+  2  intervall:  12052.2      12223.6      56.001  56.242 
+ coef   5   -0.3207123836E-01
+ coef   6   -0.6370855636E-02
+  3  intervall:  12223.6      12463.7      56.001  56.242 
+ coef   7   -0.7365604079E-02
+ coef   8   -0.5541664209E-03
+  4  intervall:  12463.7      12772.3      56.001  56.242 
+ coef   9   -0.2933926444E-02
+ coef  10   -0.5620907954E-03
+  5  intervall:  12772.3      13149.5      56.001  56.242 
+ coef  11    0.1116865336E-03
+ coef  12   -0.7836711797E-04
+  6  intervall:  13149.5      13595.3      56.001  56.242 
+ coef  13   -0.5116768710E-03
+ coef  14    0.9185745429E-04
+####       discontinuity at Eo:  0.76078573E-01
+calculating EXAFS between11915.000013595.2908
+##### Jump used for normalizzation: 
+ 0.90305    
+Averaged on    84 pts in between    36.6159  137.1666 eV
+         or     3.1000    6.0000 A^-1
+ EDGE=    11915.0000000000     
+ SLOPE (slope/jump)=  0.000000000000000E+000
+ JUMP=   0.903049130665515     
+ EWL=     11947.0360000000     
+ hwl=     1.07458142778923     
+first and last point for noise estimation [n,k(n)]:
+          36   3.03523970559595     
+         579   20.9749653646336     
+***** estimating data noise: linear interpolation *****
+ Intervals +/-    0 points
+ Intervals +/-   20 points
+ Average noise standard dev.  =    0.8062E-03
+ Average K*noise standard dev.=    0.7966E-02
+ Average signal to noise ratio=     20.38    
+ Average K*sgnl/K*nse ratio   =     18.09    
+exafs output file: 
+Au_bulk_20k.exa                                                       
+status: c . e . f . b 
+        1   1   0   0
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+ ********    FT of EXAFS data      *********
+    version 2009  
+ *******************************************
+   
+ sample: Au300K                                  
+  Using stored k, k.chi(k) data
+ output file: 
+ Au_bulk_20k.fou                                                       
+Data between   0.1157     and    20.97    
+ K_min, K_max for the FT?
+using K-range:   3.516        17.98    
+ K-Weight for FT (chi(k)*k^W) 
+ gaussian (g) or Hanning (h) window (n=none)?
+ Apodization width ?
+ R max and DR for FT (A)?
+  **** Calculating FT          401
+FT on: Au_bulk_20k.fou                                                       
+  1:R 2:|FT| 3:Re 4:Im -=*=- 5:k 6:K^Wchi(k) 7:Apo
+ 
+  ******  FT done **********
+FT output file: 
+Au_bulk_20k.fou                                                       
+status: c . e . f . b 
+        1   1   1   0
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+ ********    Fourier filtering     *********
+    version 2009 
+ *******************************************
+   
+ sample: Au300K                                  
+ back FT of: 
+ Au_bulk_20k.fou                                                       
+ n point:         401
+  401points in the R-range: 0.00000      8.00000    
+  435points in the K-range: 3.51598      17.9839    
+Hanning window,  Apo=    1.0000
+ FT weight:            2
+ output file: 
+ Au_bulk_20k.bf                                                        
+ Rmin e Rmax for BFT ?
+ expected R value for the considered shell?
+ BFT in the K range:  3.5160  17.9839
+ number of K points:          435
+ number of R points:          116
+  ********* BFT done *********
+BFT output file: 
+Au_bulk_20k.bf                                                        
+status: c . e . f . b 
+        1   1   1   1
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+          ******* OPTIONS ******** 
+               c    Convert  
+               e     EXAFS   
+               f    Fourier  
+               b   b-Fourier 
+ 
+               s Sample-inp file
+ 
+               r     reset   
+               p gnuplot macro
+  
+               q     Quit    
+*********END**************
+points between:     0.000000     0.000000

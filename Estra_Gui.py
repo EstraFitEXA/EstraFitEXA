@@ -10,7 +10,7 @@
 # If everything works well one should find a directory in the build
 # directory that contains the files needed to run the PyMca without Python
 
-import text
+import  x_text as text
 import sys
 import os
 import ConfigParser
@@ -574,7 +574,7 @@ class Column_Window:
 
         self.win_text = Frame(self.top) 
         self.win_text.pack(side=LEFT,expand=YES, fill=BOTH)
-        text.ScrolledText( parent=self.win_text, file=self.filenames[0],hor=True, active=False)
+        text.ScrolledText( parent=self.win_text, filex=self.filenames[0],hor=True, active=False)
 
         self.top_con= Frame(self.top) 
         self.top_con.pack(side=LEFT,expand=YES)

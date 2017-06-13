@@ -93,6 +93,15 @@ class SimpleEditor(ScrolledText):
                 self.text.focus() 
                 
 class InpEditor(SimpleEditor):
+    def __init__(self, parent=None, filex=None): 
+        frm = Frame(parent)
+        frm.pack(fill=X)
+        Button(frm, text='Save',  command=self.onSave).pack(side=LEFT)
+        Button(frm, text='Cut',   command=self.onCut).pack(side=LEFT)
+        Button(frm, text='Paste', command=self.onPaste).pack(side=LEFT)
+        ScrolledText.__init__(self, parent, filex=filex) 
+        self.text.config(font=('courier', 9, 'normal'))
+        self.filex=filex        
     def onSave(self):
         alltext = self.gettext()                      
         open(self.filex, 'w').write(alltext)
@@ -100,6 +109,6 @@ class InpEditor(SimpleEditor):
 
 if __name__ == '__main__':
     try:
-        SimpleEditor(filex=sys.argv[1]).mainloop()   
+        SimpleEditor(file=sys.argv[1]).mainloop()   
     except IndexError:
         SimpleEditor().mainloop()       
